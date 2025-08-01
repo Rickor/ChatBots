@@ -17,4 +17,4 @@ def gpt_bot():
         bot_reply = response['choices'][0]['message']['content']
         print(f" AI: {bot_reply}")
 
-# gpt_bot()
+ gpt_bot()
