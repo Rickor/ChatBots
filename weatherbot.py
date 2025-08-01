@@ -9,19 +9,19 @@ def get_weather(city):
     data = response.json()
 
     if data.get("cod") != 200:
-        return f"❌ Error: {data.get('message', 'City not found.')}"
+        return f" Error: {data.get('message', 'City not found.')}"
     
     weather = data["weather"][0]["description"]
     temp = data["main"]["temp"]
     feels_like = data["main"]["feels_like"]
-    return f"🌦 Weather in {city.title()}:\n - {weather}\n - Temp: {temp}°C (feels like {feels_like}°C)"
+    return f" Weather in {city.title()}:\n - {weather}\n - Temp: {temp}°C (feels like {feels_like}°C)"
 
 def weather_bot():
     print("🌤️ Welcome to Weather Bot!")
     while True:
-        city = input("🏙️ Enter city name (or 'exit'): ").strip()
+        city = input(" Enter city name (or 'exit'): ").strip()
         if city.lower() == "exit":
-            print("👋 Goodbye!")
+            print(" Goodbye!")
             break
         print(get_weather(city))
 
