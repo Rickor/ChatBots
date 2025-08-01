@@ -2,7 +2,7 @@ tasks = []
 
 def show_help():
     print("""
-📝 Commands:
+ Commands:
   - add <task>         : Add a new task
   - remove <task>      : Remove a task
   - show               : Show all tasks
@@ -12,38 +12,38 @@ def show_help():
 """)
 
 def todo_bot():
-    print("👋 Welcome to your To-Do Bot!")
+    print(" Welcome to your To-Do Bot!")
     show_help()
     while True:
-        command = input("👉 Enter command: ").strip().lower()
+        command = input(" Enter command: ").strip().lower()
         if command.startswith("add "):
             task = command[4:]
             tasks.append(task)
-            print(f"✅ Added: '{task}'")
+            print(f" Added: '{task}'")
         elif command.startswith("remove "):
             task = command[7:]
             if task in tasks:
                 tasks.remove(task)
-                print(f"❌ Removed: '{task}'")
+                print(f" Removed: '{task}'")
             else:
-                print("⚠️ Task not found.")
+                print(" Task not found.")
         elif command == "show":
             if not tasks:
-                print("📭 No tasks yet.")
+                print(" No tasks yet.")
             else:
-                print("📋 Your tasks:")
+                print(" Your tasks:")
                 for i, t in enumerate(tasks, start=1):
                     print(f"  {i}. {t}")
         elif command == "clear":
             tasks.clear()
-            print("🧹 All tasks cleared.")
+            print(" All tasks cleared.")
         elif command == "help":
             show_help()
         elif command == "exit":
-            print("👋 Goodbye!")
+            print(" Goodbye!")
             break
         else:
-            print("❓ Unknown command. Type 'help'.")
+            print(" Unknown command. Type 'help'.")
 
-# Run it
+# Run code
 todo_bot()
